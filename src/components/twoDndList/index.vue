@@ -7,8 +7,8 @@
           <div class="list-complete-item-handle">[{{element.author}}] {{element.title}}</div>
           <div style="position:absolute;right:0px;">
             <span style="float: right ;margin-top: -20px;margin-right:5px;" @click="deleteEle(element)">
-                        <i style="color:#ff4949" class="el-icon-delete"></i>
-                    </span>
+                <Icon type="trash-b" style="color:#ff4949"></Icon>
+            </span>
           </div>
         </div>
       </draggable>

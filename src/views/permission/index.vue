@@ -1,11 +1,11 @@
 <template>
-  <div class="app-container">
-     <div style='margin-bottom:15px;'>你的权限： {{roles}}</div>
-     切换权限：
-      <el-radio-group v-model="role">
-        <el-radio-button label="editor"></el-radio-button>
-      </el-radio-group>
-  </div>
+    <div class="app-container">
+        <div style='margin-bottom:15px;'>你的权限： {{roles}}</div>
+        切换权限：
+        <Radio-group v-model="role" type="button">
+            <Radio label="editor"></Radio>
+        </Radio-group>
+    </div>
 </template>
 
 <script>

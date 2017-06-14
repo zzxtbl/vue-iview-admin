@@ -1,28 +1,24 @@
 <template>
-    <el-menu class="navbar" mode="horizontal">
+    <Menu class="navbar" mode="horizontal">
         <Hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></Hamburger>
         <levelbar></levelbar>
         <ErrLog v-if="log.length>0" class="errLog-container" :logsList="log"></ErrLog>
-        <el-dropdown class="avatar-container" trigger="click">
+        <Dropdown class="avatar-container" trigger="click" placement="bottom-end">
             <div class="avatar-wrapper">
                 <img class="user-avatar" :src="avatar+'?imageView2/1/w/80/h/80'">
-                <i class="el-icon-caret-bottom"/>
+                <Icon type="arrow-down-b"/>
             </div>
-            <el-dropdown-menu class="user-dropdown" slot="dropdown">
+            <Dropdown-menu class="user-dropdown" slot="list">
                 <router-link  class='inlineBlock' to="/">
-                    <el-dropdown-item>
-                        首页
-                    </el-dropdown-item>
+                    <Dropdown-item>首页</Dropdown-item>
                 </router-link>
                 <router-link  class='inlineBlock' to="/admin/profile">
-                    <el-dropdown-item>
-                        设置
-                    </el-dropdown-item>
+                    <Dropdown-item>设置</Dropdown-item>
                 </router-link>
-                <el-dropdown-item divided><span @click="logout" style="display:block;">退出登录</span></el-dropdown-item>
-            </el-dropdown-menu>
-        </el-dropdown>
-    </el-menu>
+                <Dropdown-item divided><span @click="logout" style="display:block;">退出登录</span></Dropdown-item>
+            </Dropdown-menu>
+        </Dropdown>
+    </Menu>
 </template>
 
 <script>
@@ -67,6 +63,7 @@
         height: 50px;
         line-height: 50px;
         border-radius: 0px !important;
+        background: #eef1f6;
         .hamburger-container {
             line-height: 58px;
             height: 50px;
@@ -83,20 +80,21 @@
             display: inline-block;
             position: absolute;
             right: 35px;
+            top: 0;
             .avatar-wrapper {
                 cursor: pointer;
                 margin-top:5px;
                 position: relative;
+                height: 40px;
                 .user-avatar {
                     width: 40px;
                     height: 40px;
                     border-radius: 10px;
                 }
-                .el-icon-caret-bottom {
+                .ivu-icon-arrow-down-b {
                     position: absolute;
-                    right: -20px;
+                    right: -15px;
                     top: 25px;
-                    font-size: 12px;
                 }
             }
         }

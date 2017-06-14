@@ -1,39 +1,70 @@
 <template>
-  <div class="app-container">
-    <div class="filter-container">
-    <el-checkbox-group v-model="formThead">
-        <el-checkbox label="apple">apple</el-checkbox>
-        <el-checkbox label="banana">banana</el-checkbox>
-        <el-checkbox label="orange">orange</el-checkbox>
-      </el-checkbox-group>
+    <div class="app-container">
+        <div class="filter-container">
+            <Checkbox-group v-model="formThead" @on-change="changeTableColumns">
+                <Checkbox label="apple">apple</Checkbox>
+                <Checkbox label="banana">banana</Checkbox>
+                <Checkbox label="orange">orange</Checkbox>
+            </Checkbox-group>
+        </div>
+        <Table :columns="columns" :data="tableData" style="width: 100%"></Table>
     </div>
-    <el-table :data="tableData" style="width: 100%">
-      <el-table-column prop="name" label="名称" width="180">
-      </el-table-column>
-      <el-table-column :key='fruit' v-for='(fruit,index) in formThead' :label="fruit">
-        <template scope="scope">
-          {{scope.row.list[index].value}}
-        </template>
-      </el-table-column>
-    </el-table>
-  </div>
 </template>
 <script>
-
-
 export default {
-  data() {
-    return {
-      tableData: [{
-        name: '水果',
-        list: [{ name: 'apple', value: 10 }, { name: 'banana', value: 20 }, { name: 'orange', value: 20 }]
-      }, {
-        name: '水果2',
-        list: [{ name: 'apple2', value: 12 }, { name: 'banana2', value: 22 }, { name: 'orange', value: 20 }]
-      }],
-      formThead: ['apple', 'banana']
+    data() {
+        return {
+            columns: [],
+            tableData: [{
+                name: '水果',
+                apple: 10,
+                banana: 20,
+                orange: 20
+            }, {
+                name: '水果',
+                apple: 40,
+                banana: 50,
+                orange: 60
+            }],
+            formThead: ['apple', 'banana']
+        }
+    },
+    methods: {
+        getTableColumns () {
+            const tableColumnList = {
+                name: {
+                    title: '名称',
+                    key: 'name'
+                },
+                apple: {
+                    title: 'apple',
+                    key: 'apple',
+                    sortable: true
+                },
+                banana: {
+                    title: 'banana',
+                    key: 'banana',
+                    sortable: true
+                },
+                orange: {
+                    title: 'orange',
+                    key: 'orange',
+                    sortable: true
+                }
+            };
+            let data = [tableColumnList.name];
+            this.formThead.forEach(col => data.push(tableColumnList[col]));
+            return data;
+        },
+        changeTableColumns () {
+            this.columns = this.getTableColumns();
+        },
+        toggleFav (index) {
+            this.tableData[index].fav = this.tableData[index].fav === 0 ? 1 : 0;
+        }
+    },
+    mounted () {
+        this.changeTableColumns();
     }
-  }
 };
 </script>
-

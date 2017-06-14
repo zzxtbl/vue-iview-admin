@@ -1,23 +1,24 @@
 <template>
     <div class="upload-container">
-        <el-button icon='upload' :style="{background:color,borderColor:color}" @click=" dialogVisible=true" type="primary">上传图片
-        </el-button>
-        <el-dialog v-model="dialogVisible">
-            <el-upload
-                    class="editor-slide-upload"
+        <Button icon='upload' @click=" dialogVisible=true" type="primary" :style="{background:color,borderColor:color}">上传图片</Button>
+        <Modal v-model="dialogVisible" title="上传图片" @on-ok="handleSubmit">
+            <Upload
+                    class="editor-audio-upload"
                     action="https://httpbin.org/post"
+                    multiple
+                    type="drag"
                     :data="dataObj"
-                    :multiple="true"
                     :file-list="fileList"
-                    :show-file-list="true"
+                    :show-upload-list="true"
                     list-type="picture-card"
                     :on-remove="handleRemove"
                     :on-success="handleImageScucess">
-                <el-button size="small" type="primary">点击上传</el-button>
-            </el-upload>
-            <el-button @click="dialogVisible = false">取 消</el-button>
-            <el-button type="primary" @click="handleSubmit">确 定</el-button>
-        </el-dialog>
+                <div style="padding: 20px 0">
+                    <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
+                    <p>点击或将文件拖拽到这里上传</p>
+                </div>
+            </Upload>
+        </Modal>
     </div>
 </template>
 <script>

@@ -1,7 +1,7 @@
 <template>
-    <el-menu mode="vertical" theme="dark" :default-active="$route.path">
+    <Menu mode="vertical" theme="dark" :active-name="$route.path">
         <sidebar-item :routes='permission_routers'></sidebar-item>
-    </el-menu>
+    </Menu>
 </template>
 
 <script>
@@ -14,10 +14,12 @@
           'permission_routers'
         ])
       }
-    }
+  }
 </script>
 <style rel="stylesheet/scss" lang="scss" scoped>
-    .el-menu {
+    .ivu-menu {
         min-height: 100%;
+        width: 100% !important;
+        background-color: #324157;
     }
 </style>

@@ -4,10 +4,10 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import store from './store';
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-default/index.css';
-import 'assets/custom-theme/index.css'; // 换肤版本element-ui css https://github.com/PanJiaChen/custom-element-theme
-import NProgress from 'nprogress'; // Progress 进度条
+import iView from 'iview';
+import 'iview/dist/styles/iview.css';
+import 'assets/custom-theme/index.css'; // 自定义主题
+import NProgress from 'nprogress'; // Progress 进度条，TODO: 改造为 iview 自带
 import 'nprogress/nprogress.css';// Progress 进度条 样式
 import 'normalize.css/normalize.css';// normalize.css 样式格式化
 import 'styles/index.scss'; // 全局自定义的css样式
@@ -24,7 +24,7 @@ import './mock/index.js';  // 该项目所有请求使用mockjs模拟
 // register globally
 Vue.component('multiselect', Multiselect);
 Vue.component('Sticky', Sticky);
-Vue.use(ElementUI);
+Vue.use(iView);
 Vue.use(vueWaves);
 
 // register global utility filters.
@@ -116,5 +116,3 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app');
-
-

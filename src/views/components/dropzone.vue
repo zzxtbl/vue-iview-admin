@@ -17,14 +17,12 @@
       methods: {
         dropzoneS(file) {
           console.log(file)
-          this.$message({ message: '上传成功', type: 'success' });
+          this.$Message.success('上传成功');
         },
         dropzoneR(file) {
           console.log(file)
-          this.$message({ message: '删除成功', type: 'success' });
+          this.$Message.success('删除成功');
         }
       }
     };
 </script>
-
-

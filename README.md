@@ -1,3 +1,10 @@
+# vue-iview-admin #
+
+首先，非常感谢 [PanJiaChen](https://github.com/PanJiaChen/vue-element-admin) ！本项目是在 **vue-element-admin** 的基础上移植而来，将 `Element UI` 移植为 `iview`。
+
+> 以下为原版项目介绍：
+
+
 # vue-element-admin #
 [线上地址](http://panjiachen.github.io/vue-element-admin)
 
@@ -166,4 +173,3 @@ Detailed changes for each release are documented in the [release notes](https://
 
 
 ## [更多demo](http://panjiachen.github.io/vue-element-admin)
-

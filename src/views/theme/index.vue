@@ -1,43 +1,43 @@
 <template>
   <div class="app-container">
     <code>会补动态换肤的教程</code>
-    <el-card class="box-card">
+    <i-card class="box-card">
       <div slot="header">
         <span style="line-height: 36px;">偏好设置</span>
       </div>
 
       <div class="box-item">
         <span class="field-label">换肤:</span>
-        <el-switch v-model="theme" on-text="" off-text="">
-        </el-switch>
+        <i-switch v-model="theme" on-text="" off-text="">
+        </i-switch>
       </div>
-    </el-card>
+    </i-card>
 
     <div class="block">
       <span class="demonstration">Button: </span>
       <span class="wrapper">
-        <el-button type="success">成功按钮</el-button>
-        <el-button type="warning">警告按钮</el-button>
-        <el-button type="danger">危险按钮</el-button>
-        <el-button type="info">信息按钮</el-button>
+        <i-button type="success">成功按钮</i-button>
+        <i-button type="warning">警告按钮</i-button>
+        <i-button type="danger">危险按钮</i-button>
+        <i-button type="info">信息按钮</i-button>
        </span>
     </div>
 
     <div class="block">
-      <el-tag class='tag-item' v-for="tag in tags" :type="tag.type" :key='tag.type'>
+      <i-tag class='tag-item' v-for="tag in tags" :type="tag.type" :key='tag.type'>
         {{tag.name}}
-      </el-tag>
+      </i-tag>
     </div>
 
     <div class="block">
-      <el-alert class='alert-item' title="成功提示的文案" type="success">
-      </el-alert>
-      <el-alert class='alert-item' title="消息提示的文案" type="info">
-      </el-alert>
-      <el-alert class='alert-item' title="警告提示的文案" type="warning">
-      </el-alert>
-      <el-alert class='alert-item' title="错误提示的文案" type="error">
-      </el-alert>
+      <i-alert class='alert-item' title="成功提示的文案" type="success">
+      </i-alert>
+      <i-alert class='alert-item' title="消息提示的文案" type="info">
+      </i-alert>
+      <i-alert class='alert-item' title="警告提示的文案" type="warning">
+      </i-alert>
+      <i-alert class='alert-item' title="错误提示的文案" type="error">
+      </i-alert>
     </div>
 
   </div>

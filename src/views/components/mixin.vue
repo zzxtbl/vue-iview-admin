@@ -15,7 +15,7 @@
     </div>
 
     <div class='component-item'>
-      <el-button v-waves type="primary">水波纹效果</el-button>
+      <Button v-waves type="primary">水波纹效果</Button>
       <code class='code-part'>水波纹 v-directive</code>
     </div>
 
